@@ -39,7 +39,7 @@ tags:
   - name: Emails
     description: Operations about Emails
 paths:
-  /v5/repos/{owner}/{repo}/check-runs:
+  /v5/repos/:owner/:repo/check-runs:
     post:
       tags:
         - Checks
@@ -223,7 +223,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/CheckRun"
-  /v5/repos/{owner}/{repo}/check-runs/{check_run_id}:
+  /v5/repos/:owner/:repo/check-runs/:check_run_id:
     get:
       tags:
         - Checks
@@ -447,7 +447,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/CheckRun"
-  /v5/repos/{owner}/{repo}/check-runs/{check_run_id}/annotations:
+  /v5/repos/:owner/:repo/check-runs/:check_run_id/annotations:
     get:
       tags:
         - Checks
@@ -502,7 +502,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/CheckAnnotation"
-  /v5/repos/{owner}/{repo}/commits/{ref}/check-runs:
+  /v5/repos/:owner/:repo/commits/:ref/check-runs:
     get:
       tags:
         - Checks
@@ -587,7 +587,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/CheckRun"
-  /v5/repos/{owner}/{repo}/branches:
+  /v5/repos/:owner/:repo/branches:
     get:
       tags:
         - Repositories
@@ -700,7 +700,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/CompleteBranch"
-  /v5/repos/{owner}/{repo}/branches/{branch}:
+  /v5/repos/:owner/:repo/branches/:branch:
     get:
       tags:
         - Repositories
@@ -738,7 +738,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/CompleteBranch"
-  /v5/repos/{owner}/{repo}/branches/{branch}/protection:
+  /v5/repos/:owner/:repo/branches/:branch/protection:
     put:
       tags:
         - Repositories
@@ -814,7 +814,7 @@ paths:
         "204":
           description: 取消保护分支的设置
           content: {}
-  /v5/repos/{owner}/{repo}/branches/{wildcard}/setting:
+  /v5/repos/:owner/:repo/branches/:wildcard/setting:
     put:
       tags:
         - Repositories
@@ -923,7 +923,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ProtectionRule"
-  /v5/repos/{owner}/{repo}/branches/setting/new:
+  /v5/repos/:owner/:repo/branches/setting/new:
     put:
       tags:
         - Repositories
@@ -990,7 +990,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ProtectionRule"
-  /v5/repos/{owner}/{repo}/tags:
+  /v5/repos/:owner/:repo/tags:
     get:
       tags:
         - Repositories
@@ -1106,7 +1106,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Tag"
-  /v5/repos/{owner}/{repo}/comments:
+  /v5/repos/:owner/:repo/comments:
     get:
       tags:
         - Repositories
@@ -1162,7 +1162,7 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/Note"
-  /v5/repos/{owner}/{repo}/commits/{ref}/comments:
+  /v5/repos/:owner/:repo/commits/:ref/comments:
     get:
       tags:
         - Repositories
@@ -1221,7 +1221,7 @@ paths:
         "404":
           description: 没有相关数据
           content: {}
-  /v5/repos/{owner}/{repo}/comments/{id}:
+  /v5/repos/:owner/:repo/comments/:id:
     get:
       tags:
         - Repositories
@@ -1349,7 +1349,7 @@ paths:
         "404":
           description: 没有相关数据
           content: {}
-  /v5/repos/{owner}/{repo}/commits/{sha}/comments:
+  /v5/repos/:owner/:repo/commits/:sha/comments:
     post:
       tags:
         - Repositories
@@ -1407,7 +1407,7 @@ paths:
         "404":
           description: 没有相关数据
           content: {}
-  /v5/repos/{owner}/{repo}/issues/comments:
+  /v5/repos/:owner/:repo/issues/comments:
     get:
       tags:
         - Issues
@@ -1482,7 +1482,7 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/Note"
-  /v5/repos/{owner}/{repo}/issues/{number}/comments:
+  /v5/repos/:owner/:repo/issues/:number/comments:
     get:
       tags:
         - Issues
@@ -1601,7 +1601,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Note"
-  /v5/repos/{owner}/{repo}/issues/comments/{id}:
+  /v5/repos/:owner/:repo/issues/comments/:id:
     get:
       tags:
         - Issues
@@ -1726,7 +1726,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Note"
-  /v5/repos/{owner}/{repo}/commits:
+  /v5/repos/:owner/:repo/commits:
     get:
       tags:
         - Repositories
@@ -1834,7 +1834,7 @@ paths:
               schema:
                 $ref: "#/components/schemas/RepoCommitWithFiles"
       x-codegen-request-body-name: V5ReposOwnerRepoCommits
-  /v5/repos/{owner}/{repo}/commits/{sha}:
+  /v5/repos/:owner/:repo/commits/:sha:
     get:
       tags:
         - Repositories
@@ -1872,7 +1872,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/RepoCommitWithFiles"
-  /v5/repos/{owner}/{repo}/compare/{base}...{head}:
+  /v5/repos/:owner/:repo/compare/:base...{head}:
     get:
       tags:
         - Repositories
@@ -1928,7 +1928,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Compare"
-  /v5/repos/{owner}/{repo}/keys:
+  /v5/repos/:owner/:repo/keys:
     get:
       tags:
         - Repositories
@@ -2023,7 +2023,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/SSHKey"
-  /v5/repos/{owner}/{repo}/keys/available:
+  /v5/repos/:owner/:repo/keys/available:
     get:
       tags:
         - Repositories
@@ -2073,7 +2073,7 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/SSHKeyBasic"
-  /v5/repos/{owner}/{repo}/keys/enable/{id}:
+  /v5/repos/:owner/:repo/keys/enable/:id:
     put:
       tags:
         - Repositories
@@ -2154,7 +2154,7 @@ paths:
         "404":
           description: 没有相关公钥
           content: {}
-  /v5/repos/{owner}/{repo}/keys/{id}:
+  /v5/repos/:owner/:repo/keys/:id:
     get:
       tags:
         - Repositories
@@ -2228,7 +2228,7 @@ paths:
         "204":
           description: 删除一个仓库公钥
           content: {}
-  /v5/repos/{owner}/{repo}/readme:
+  /v5/repos/:owner/:repo/readme:
     get:
       tags:
         - Repositories
@@ -2265,7 +2265,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Content"
-  /v5/repos/{owner}/{repo}/contents(/{path}):
+  /v5/repos/:owner/:repo/contents(/:path):
     get:
       tags:
         - Repositories
@@ -2310,7 +2310,7 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/Content"
-  /v5/repos/{owner}/{repo}/contents/{path}:
+  /v5/repos/:owner/:repo/contents/:path:
     put:
       tags:
         - Repositories
@@ -2521,7 +2521,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/CommitContent"
-  /v5/repos/{owner}/{repo}/blame/{path}:
+  /v5/repos/:owner/:repo/blame/:path:
     get:
       tags:
         - Repositories
@@ -2566,7 +2566,7 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/Blame"
-  /v5/repos/{owner}/{repo}/raw/{path}:
+  /v5/repos/:owner/:repo/raw/:path:
     get:
       tags:
         - Repositories
@@ -2606,7 +2606,7 @@ paths:
         "200":
           description: 获取 raw 文件（100MB 以内）
           content: {}
-  /v5/repos/{owner}/{repo}/zipball:
+  /v5/repos/:owner/:repo/zipball:
     get:
       tags:
         - Repositories
@@ -2640,7 +2640,7 @@ paths:
         "200":
           description: 下载仓库 zip
           content: {}
-  /v5/repos/{owner}/{repo}/tarball:
+  /v5/repos/:owner/:repo/tarball:
     get:
       tags:
         - Repositories
@@ -2674,7 +2674,7 @@ paths:
         "200":
           description: 下载仓库 tar.gz
           content: {}
-  /v5/repos/{owner}/{repo}/git/blobs/{sha}:
+  /v5/repos/:owner/:repo/git/blobs/:sha:
     get:
       tags:
         - Git Data
@@ -2715,7 +2715,7 @@ paths:
         "404":
           description: 没有相关数据
           content: {}
-  /v5/repos/{owner}/{repo}/git/trees/{sha}:
+  /v5/repos/:owner/:repo/git/trees/:sha:
     get:
       tags:
         - Git Data
@@ -2765,7 +2765,7 @@ paths:
         "422":
           description: SHA 值必须为 Commit 或 Tree 的
           content: {}
-  /v5/repos/{owner}/{repo}/git/gitee_metrics:
+  /v5/repos/:owner/:repo/git/gitee_metrics:
     get:
       tags:
         - Git Data
@@ -2800,7 +2800,7 @@ paths:
         "404":
           description: 没有相关数据
           content: {}
-  /v5/repos/{owner}/{repo}/issues:
+  /v5/repos/:owner/:repo/issues:
     get:
       tags:
         - Issues
@@ -2933,7 +2933,7 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/Issue"
-  /v5/repos/{owner}/{repo}/issues/{number}:
+  /v5/repos/:owner/:repo/issues/:number:
     get:
       tags:
         - Issues
@@ -2971,7 +2971,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Issue"
-  /v5/repos/{owner}/issues:
+  /v5/repos/:owner/issues:
     post:
       tags:
         - Issues
@@ -3035,7 +3035,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Issue"
-  /v5/repos/{owner}/issues/{number}:
+  /v5/repos/:owner/issues/:number:
     patch:
       tags:
         - Issues
@@ -3106,7 +3106,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Issue"
-  /v5/repos/{owner}/issues/{number}/pull_requests:
+  /v5/repos/:owner/issues/:number/pull_requests:
     get:
       tags:
         - Issues
@@ -3145,7 +3145,7 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/PullRequest"
-  /v5/repos/{owner}/issues/{number}/operate_logs:
+  /v5/repos/:owner/issues/:number/operate_logs:
     get:
       tags:
         - Issues
@@ -3193,7 +3193,7 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/OperateLog"
-  /v5/repos/{owner}/{repo}/labels:
+  /v5/repos/:owner/:repo/labels:
     get:
       tags:
         - Labels
@@ -3272,7 +3272,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Label"
-  /v5/repos/{owner}/{repo}/labels/{name}:
+  /v5/repos/:owner/:repo/labels/:name:
     get:
       tags:
         - Labels
@@ -3344,7 +3344,7 @@ paths:
         "204":
           description: 删除一个仓库任务标签
           content: {}
-  /v5/repos/{owner}/{repo}/labels/{original_name}:
+  /v5/repos/:owner/:repo/labels/:original_name:
     patch:
       tags:
         - Labels
@@ -3392,7 +3392,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Label"
-  /v5/repos/{owner}/{repo}/issues/{number}/labels:
+  /v5/repos/:owner/:repo/issues/:number/labels:
     get:
       tags:
         - Labels
@@ -3558,7 +3558,7 @@ paths:
         "204":
           description: 删除 Issue 所有标签
           content: {}
-  /v5/repos/{owner}/{repo}/issues/{number}/labels/{name}:
+  /v5/repos/:owner/:repo/issues/:number/labels/:name:
     delete:
       tags:
         - Labels
@@ -3599,7 +3599,7 @@ paths:
         "204":
           description: 删除 Issue 标签
           content: {}
-  /v5/repos/{owner}/{repo}/project_labels:
+  /v5/repos/:owner/:repo/project_labels:
     get:
       tags:
         - Labels
@@ -3743,7 +3743,7 @@ paths:
           description: 删除仓库标签
           content: {}
       x-codegen-request-body-name: body
-  /v5/repos/{owner}/{repo}/milestones:
+  /v5/repos/:owner/:repo/milestones:
     get:
       tags:
         - Milestones
@@ -3873,7 +3873,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Milestone"
-  /v5/repos/{owner}/{repo}/milestones/{number}:
+  /v5/repos/:owner/:repo/milestones/:number:
     get:
       tags:
         - Milestones
@@ -4011,7 +4011,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Milestone"
-  /v5/repos/{owner}/{repo}/license:
+  /v5/repos/:owner/:repo/license:
     get:
       tags:
         - Miscellaneous
@@ -4043,7 +4043,7 @@ paths:
         "404":
           description: 没有相关数据
           content: {}
-  /v5/repos/{owner}/{repo}/pages:
+  /v5/repos/:owner/:repo/pages:
     get:
       tags:
         - Repositories
@@ -4116,7 +4116,7 @@ paths:
         "200":
           description: 上传设置 Pages SSL 证书和域名
           content: {}
-  /v5/repos/{owner}/{repo}/pages/builds:
+  /v5/repos/:owner/:repo/pages/builds:
     post:
       tags:
         - Repositories
@@ -4149,7 +4149,7 @@ paths:
         "201":
           description: 请求建立 Pages
           content: {}
-  /v5/repos/{owner}/{repo}:
+  /v5/repos/:owner/:repo:
     get:
       tags:
         - Repositories
@@ -4315,7 +4315,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Project"
-  /v5/repos/{owner}/{repo}/reviewer:
+  /v5/repos/:owner/:repo/reviewer:
     put:
       tags:
         - Repositories
@@ -4371,7 +4371,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Project"
-  /v5/repos/{owner}/{repo}/push_config:
+  /v5/repos/:owner/:repo/push_config:
     get:
       tags:
         - Repositories
@@ -4463,7 +4463,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ProjectPushConfig"
-  /v5/repos/{owner}/{repo}/contributors:
+  /v5/repos/:owner/:repo/contributors:
     get:
       tags:
         - Repositories
@@ -4506,7 +4506,7 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/Contributor"
-  /v5/repos/{owner}/{repo}/clear:
+  /v5/repos/:owner/:repo/clear:
     put:
       tags:
         - Repositories
@@ -4539,7 +4539,7 @@ paths:
         "204":
           description: 清空仓库成功
           content: {}
-  /v5/repos/{owner}/{repo}/collaborators:
+  /v5/repos/:owner/:repo/collaborators:
     get:
       tags:
         - Repositories
@@ -4589,7 +4589,7 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/ProjectMember"
-  /v5/repos/{owner}/{repo}/collaborators/{username}:
+  /v5/repos/:owner/:repo/collaborators/:username:
     get:
       tags:
         - Repositories
@@ -4710,7 +4710,7 @@ paths:
         "204":
           description: 移除仓库成员
           content: {}
-  /v5/repos/{owner}/{repo}/collaborators/{username}/permission:
+  /v5/repos/:owner/:repo/collaborators/:username/permission:
     get:
       tags:
         - Repositories
@@ -4748,7 +4748,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ProjectMemberPermission"
-  /v5/repos/{owner}/{repo}/forks:
+  /v5/repos/:owner/:repo/forks:
     get:
       tags:
         - Repositories
@@ -4858,7 +4858,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Project"
-  /v5/repos/{owner}/{repo}/baidu_statistic_key:
+  /v5/repos/:owner/:repo/baidu_statistic_key:
     get:
       tags:
         - Repositories
@@ -4950,7 +4950,7 @@ paths:
         "204":
           description: 删除仓库的百度统计 key
           content: {}
-  /v5/repos/{owner}/{repo}/traffic-data:
+  /v5/repos/:owner/:repo/traffic-data:
     post:
       tags:
         - Repositories
@@ -4992,7 +4992,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ProjectTrafficData"
-  /v5/repos/{owner}/{repo}/languages:
+  /v5/repos/:owner/:repo/languages:
     get:
       tags:
         - Repositories
@@ -5024,7 +5024,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ProjectLanguage"
-  /v5/repos/{owner}/{repo}/pulls:
+  /v5/repos/:owner/:repo/pulls:
     get:
       tags:
         - Pull Requests
@@ -5240,7 +5240,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/PullRequest"
-  /v5/repos/{owner}/{repo}/pulls/{number}:
+  /v5/repos/:owner/:repo/pulls/:number:
     get:
       tags:
         - Pull Requests
@@ -5360,7 +5360,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/PullRequest"
-  /v5/repos/{owner}/{repo}/pulls/{number}/operate_logs:
+  /v5/repos/:owner/:repo/pulls/:number/operate_logs:
     get:
       tags:
         - Pull Requests
@@ -5410,7 +5410,7 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/OperateLog"
-  /v5/repos/{owner}/{repo}/pulls/{number}/commits:
+  /v5/repos/:owner/:repo/pulls/:number/commits:
     get:
       tags:
         - Pull Requests
@@ -5451,7 +5451,7 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/PullRequestCommits"
-  /v5/repos/{owner}/{repo}/pulls/{number}/files:
+  /v5/repos/:owner/:repo/pulls/:number/files:
     get:
       tags:
         - Pull Requests
@@ -5492,7 +5492,7 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/PullRequestFiles"
-  /v5/repos/{owner}/{repo}/pulls/{number}/merge:
+  /v5/repos/:owner/:repo/pulls/:number/merge:
     get:
       tags:
         - Pull Requests
@@ -5583,13 +5583,13 @@ paths:
                   description: 可选。合并标题，默认为 PR 的标题
                 description:
                   type: string
-                  description: "可选。合并描述，默认为 \"Merge pull request !{pr_id} from {author}/{source_branch}\"\
+                  description: "可选。合并描述，默认为 \"Merge pull request !{pr_id} from {author}/:source_branch\"\
                     ，与页面显示的默认一致。"
       responses:
         "200":
           description: 合并 Pull Request
           content: {}
-  /v5/repos/{owner}/{repo}/pulls/{number}/review:
+  /v5/repos/:owner/:repo/pulls/:number/review:
     post:
       tags:
         - Pull Requests
@@ -5632,7 +5632,7 @@ paths:
         "201":
           description: 处理 Pull Request 审查
           content: {}
-  /v5/repos/{owner}/{repo}/pulls/{number}/test:
+  /v5/repos/:owner/:repo/pulls/:number/test:
     post:
       tags:
         - Pull Requests
@@ -5675,7 +5675,7 @@ paths:
         "201":
           description: 处理 Pull Request 测试
           content: {}
-  /v5/repos/{owner}/{repo}/pulls/{number}/assignees:
+  /v5/repos/:owner/:repo/pulls/:number/assignees:
     post:
       tags:
         - Pull Requests
@@ -5813,7 +5813,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/PullRequest"
-  /v5/repos/{owner}/{repo}/pulls/{number}/testers:
+  /v5/repos/:owner/:repo/pulls/:number/testers:
     post:
       tags:
         - Pull Requests
@@ -5951,7 +5951,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/PullRequest"
-  /v5/repos/{owner}/{repo}/pulls/{number}/issues:
+  /v5/repos/:owner/:repo/pulls/:number/issues:
     get:
       tags:
         - Pull Requests
@@ -6007,7 +6007,7 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/Issue"
-  /v5/repos/{owner}/{repo}/pulls/{number}/comments:
+  /v5/repos/:owner/:repo/pulls/:number/comments:
     get:
       tags:
         - Pull Requests
@@ -6138,7 +6138,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/PullRequestComments"
-  /v5/repos/{owner}/{repo}/pulls/{number}/labels:
+  /v5/repos/:owner/:repo/pulls/:number/labels:
     get:
       tags:
         - Pull Requests
@@ -6289,7 +6289,7 @@ paths:
                 items:
                   $ref: "#/components/schemas/Label"
       x-codegen-request-body-name: body
-  /v5/repos/{owner}/{repo}/pulls/{number}/labels/{name}:
+  /v5/repos/:owner/:repo/pulls/:number/labels/:name:
     delete:
       tags:
         - Pull Requests
@@ -6331,7 +6331,7 @@ paths:
         "204":
           description: 删除 Pull Request 标签
           content: {}
-  /v5/repos/{owner}/{repo}/pulls/comments/{id}:
+  /v5/repos/:owner/:repo/pulls/comments/:id:
     get:
       tags:
         - Pull Requests
@@ -6452,7 +6452,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/PullRequestComments"
-  /v5/repos/{owner}/{repo}/releases:
+  /v5/repos/:owner/:repo/releases:
     get:
       tags:
         - Repositories
@@ -6566,7 +6566,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Release"
-  /v5/repos/{owner}/{repo}/releases/{id}:
+  /v5/repos/:owner/:repo/releases/:id:
     get:
       tags:
         - Repositories
@@ -6697,7 +6697,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Release"
-  /v5/repos/{owner}/{repo}/releases/latest:
+  /v5/repos/:owner/:repo/releases/latest:
     get:
       tags:
         - Repositories
@@ -6729,7 +6729,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Release"
-  /v5/repos/{owner}/{repo}/releases/tags/{tag}:
+  /v5/repos/:owner/:repo/releases/tags/:tag:
     get:
       tags:
         - Repositories
@@ -6767,7 +6767,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Release"
-  /v5/repos/{owner}/{repo}/releases/{release_id}/attach_files:
+  /v5/repos/:owner/:repo/releases/:release_id/attach_files:
     get:
       tags:
         - Repositories
@@ -6881,7 +6881,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/AttachFile"
-  /v5/repos/{owner}/{repo}/releases/{release_id}/attach_files/{attach_file_id}:
+  /v5/repos/:owner/:repo/releases/:release_id/attach_files/:attach_file_id:
     get:
       tags:
         - Repositories
@@ -6967,7 +6967,7 @@ paths:
         "204":
           description: 删除仓库下指定 Release 的指定附件
           content: {}
-  /v5/repos/{owner}/{repo}/releases/{release_id}/attach_files/{attach_file_id}/download:
+  /v5/repos/:owner/:repo/releases/:release_id/attach_files/:attach_file_id/download:
     get:
       tags:
         - Repositories
@@ -7010,7 +7010,7 @@ paths:
         "200":
           description: 下载指定 Release 的单个附件
           content: {}
-  /v5/repos/{owner}/{repo}/hooks:
+  /v5/repos/:owner/:repo/hooks:
     get:
       tags:
         - Webhooks
@@ -7127,7 +7127,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Hook"
-  /v5/repos/{owner}/{repo}/hooks/{id}:
+  /v5/repos/:owner/:repo/hooks/:id:
     get:
       tags:
         - Webhooks
@@ -7275,7 +7275,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Hook"
-  /v5/repos/{owner}/{repo}/hooks/{id}/tests:
+  /v5/repos/:owner/:repo/hooks/:id/tests:
     post:
       tags:
         - Webhooks
@@ -7315,7 +7315,7 @@ paths:
         "204":
           description: 测试发送成功
           content: {}
-  /v5/repos/{owner}/{repo}/stargazers:
+  /v5/repos/:owner/:repo/stargazers:
     get:
       tags:
         - Activity
@@ -7371,7 +7371,7 @@ paths:
         "404":
           description: 没有相关数据
           content: {}
-  /v5/repos/{owner}/{repo}/subscribers:
+  /v5/repos/:owner/:repo/subscribers:
     get:
       tags:
         - Activity
@@ -7427,7 +7427,7 @@ paths:
         "404":
           description: 没有相关数据
           content: {}
-  /v5/repos/{owner}/{repo}/events:
+  /v5/repos/:owner/:repo/events:
     get:
       tags:
         - Activity
@@ -7480,7 +7480,7 @@ paths:
         "404":
           description: 没有相关数据
           content: {}
-  /v5/repos/{owner}/{repo}/notifications:
+  /v5/repos/:owner/:repo/notifications:
     get:
       tags:
         - Activity
@@ -7607,7 +7607,7 @@ paths:
         "403":
           description: 没有权限
           content: {}
-  /v5/repos/{owner}/{repo}/open:
+  /v5/repos/:owner/:repo/open:
     post:
       tags:
         - Repositories
@@ -7713,7 +7713,7 @@ paths:
         "400":
           description: 数据不合法
           content: {}
-  /v5/user/keys/{id}:
+  /v5/user/keys/:id:
     get:
       tags:
         - Users
@@ -8715,7 +8715,7 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/GroupMember"
-  /v5/user/memberships/orgs/{org}:
+  /v5/user/memberships/orgs/:org:
     get:
       tags:
         - Organizations
@@ -8810,7 +8810,7 @@ paths:
         "404":
           description: 没有相关数据
           content: {}
-  /v5/user/following/{username}:
+  /v5/user/following/:username:
     get:
       tags:
         - Users
@@ -8884,7 +8884,7 @@ paths:
         "204":
           description: 执行成功
           content: {}
-  /v5/user/starred/{owner}/{repo}:
+  /v5/user/starred/:owner/:repo:
     get:
       tags:
         - Activity
@@ -8979,7 +8979,7 @@ paths:
         "204":
           description: 执行成功
           content: {}
-  /v5/user/subscriptions/{owner}/{repo}:
+  /v5/user/subscriptions/:owner/:repo:
     get:
       tags:
         - Activity
@@ -9208,7 +9208,7 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/Code"
-  /v5/gists/{gist_id}/comments:
+  /v5/gists/:gist_id/comments:
     get:
       tags:
         - Gists
@@ -9287,7 +9287,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/CodeComment"
-  /v5/gists/{gist_id}/comments/{id}:
+  /v5/gists/:gist_id/comments/:id:
     get:
       tags:
         - Gists
@@ -9391,7 +9391,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/CodeComment"
-  /v5/gists/{id}:
+  /v5/gists/:id:
     get:
       tags:
         - Gists
@@ -9475,7 +9475,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/CodeForksHistory"
-  /v5/gists/{id}/commits:
+  /v5/gists/:id/commits:
     get:
       tags:
         - Gists
@@ -9501,7 +9501,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/CodeForksHistory"
-  /v5/gists/{id}/star:
+  /v5/gists/:id/star:
     get:
       tags:
         - Gists
@@ -9572,7 +9572,7 @@ paths:
         "204":
           description: 取消 Star 代码片段
           content: {}
-  /v5/gists/{id}/forks:
+  /v5/gists/:id/forks:
     get:
       tags:
         - Gists
@@ -9640,7 +9640,7 @@ paths:
         "201":
           description: Fork 代码片段
           content: {}
-  /v5/users/{username}/orgs:
+  /v5/users/:username/orgs:
     get:
       tags:
         - Organizations
@@ -9723,7 +9723,7 @@ paths:
         "403":
           description: 没有权限
           content: {}
-  /v5/users/{username}/repos:
+  /v5/users/:username/repos:
     get:
       tags:
         - Repositories
@@ -9798,7 +9798,7 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/Project"
-  /v5/users/{username}:
+  /v5/users/:username:
     get:
       tags:
         - Users
@@ -9827,7 +9827,7 @@ paths:
         "404":
           description: 没有相关数据
           content: {}
-  /v5/users/{username}/followers:
+  /v5/users/:username/followers:
     get:
       tags:
         - Users
@@ -9874,7 +9874,7 @@ paths:
         "404":
           description: 没有相关数据
           content: {}
-  /v5/users/{username}/following:
+  /v5/users/:username/following:
     get:
       tags:
         - Users
@@ -9921,7 +9921,7 @@ paths:
         "404":
           description: 没有相关数据
           content: {}
-  /v5/users/{username}/following/{target_user}:
+  /v5/users/:username/following/:target_user:
     get:
       tags:
         - Users
@@ -9953,7 +9953,7 @@ paths:
         "404":
           description: 没有相关数据
           content: {}
-  /v5/users/{username}/keys:
+  /v5/users/:username/keys:
     get:
       tags:
         - Users
@@ -10000,7 +10000,7 @@ paths:
         "404":
           description: 没有相关数据
           content: {}
-  /v5/users/{username}/starred:
+  /v5/users/:username/starred:
     get:
       tags:
         - Activity
@@ -10062,7 +10062,7 @@ paths:
         "404":
           description: 没有相关数据
           content: {}
-  /v5/users/{username}/subscriptions:
+  /v5/users/:username/subscriptions:
     get:
       tags:
         - Activity
@@ -10124,7 +10124,7 @@ paths:
         "404":
           description: 没有相关数据
           content: {}
-  /v5/users/{username}/received_events:
+  /v5/users/:username/received_events:
     get:
       tags:
         - Activity
@@ -10168,7 +10168,7 @@ paths:
         "404":
           description: 没有相关数据
           content: {}
-  /v5/users/{username}/received_events/public:
+  /v5/users/:username/received_events/public:
     get:
       tags:
         - Activity
@@ -10212,7 +10212,7 @@ paths:
         "404":
           description: 没有相关数据
           content: {}
-  /v5/users/{username}/events:
+  /v5/users/:username/events:
     get:
       tags:
         - Activity
@@ -10256,7 +10256,7 @@ paths:
         "404":
           description: 没有相关数据
           content: {}
-  /v5/users/{username}/events/public:
+  /v5/users/:username/events/public:
     get:
       tags:
         - Activity
@@ -10300,7 +10300,7 @@ paths:
         "404":
           description: 没有相关数据
           content: {}
-  /v5/users/{username}/events/orgs/{org}:
+  /v5/users/:username/events/orgs/:org:
     get:
       tags:
         - Activity
@@ -10353,7 +10353,7 @@ paths:
         "404":
           description: 没有相关数据
           content: {}
-  /v5/orgs/{org}:
+  /v5/orgs/:org:
     get:
       tags:
         - Organizations
@@ -10438,7 +10438,7 @@ paths:
         "404":
           description: 没有相关数据
           content: {}
-  /v5/orgs/{org}/members:
+  /v5/orgs/:org/members:
     get:
       tags:
         - Organizations
@@ -10498,7 +10498,7 @@ paths:
         "404":
           description: 没有相关数据
           content: {}
-  /v5/orgs/{org}/followers:
+  /v5/orgs/:org/followers:
     get:
       tags:
         - Organizations
@@ -10545,7 +10545,7 @@ paths:
         "404":
           description: 没有相关数据
           content: {}
-  /v5/orgs/{org}/issues:
+  /v5/orgs/:org/issues:
     get:
       tags:
         - Issues
@@ -10662,7 +10662,7 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/Issue"
-  /v5/orgs/{org}/repos:
+  /v5/orgs/:org/repos:
     get:
       tags:
         - Repositories
@@ -11039,7 +11039,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Project"
-  /v5/orgs/{org}/memberships/{username}:
+  /v5/orgs/:org/memberships/:username:
     get:
       tags:
         - Organizations
@@ -11159,7 +11159,7 @@ paths:
         "404":
           description: 没有相关数据
           content: {}
-  /v5/orgs/{org}/events:
+  /v5/orgs/:org/events:
     get:
       tags:
         - Activity
@@ -11317,7 +11317,7 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/Issue"
-  /v5/enterprises/{enterprise}/issues:
+  /v5/enterprises/:enterprise/issues:
     get:
       tags:
         - Issues
@@ -11444,7 +11444,7 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/Issue"
-  /v5/enterprises/{enterprise}:
+  /v5/enterprises/:enterprise:
     get:
       tags:
         - Enterprises
@@ -11476,7 +11476,7 @@ paths:
         "404":
           description: 没有相关数据
           content: {}
-  /v5/enterprises/{enterprise}/members:
+  /v5/enterprises/:enterprise/members:
     get:
       tags:
         - Enterprises
@@ -11585,7 +11585,7 @@ paths:
         "404":
           description: 没有相关数据
           content: {}
-  /v5/enterprises/{enterprise}/members/search:
+  /v5/enterprises/:enterprise/members/search:
     get:
       tags:
         - Enterprises
@@ -11623,7 +11623,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/EnterpriseMember"
-  /v5/enterprises/{enterprise}/week_reports/{id}/comments:
+  /v5/enterprises/:enterprise/week_reports/:id/comments:
     get:
       tags:
         - Enterprises
@@ -11674,7 +11674,7 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/Note"
-  /v5/enterprises/{enterprise}/week_reports/{id}/comment:
+  /v5/enterprises/:enterprise/week_reports/:id/comment:
     post:
       tags:
         - Enterprises
@@ -11717,7 +11717,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Note"
-  /v5/enterprises/{enterprise}/week_reports/{report_id}/comments/{id}:
+  /v5/enterprises/:enterprise/week_reports/:report_id/comments/:id:
     delete:
       tags:
         - Enterprises
@@ -11754,7 +11754,7 @@ paths:
         "204":
           description: 删除周报某个评论
           content: {}
-  /v5/enterprises/{enterprise}/users/{username}/week_reports:
+  /v5/enterprises/:enterprise/users/:username/week_reports:
     get:
       tags:
         - Enterprises
@@ -11804,7 +11804,7 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/WeekReport"
-  /v5/enterprises/{enterprise}/week_reports:
+  /v5/enterprises/:enterprise/week_reports:
     get:
       tags:
         - Enterprises
@@ -11870,7 +11870,7 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/WeekReport"
-  /v5/enterprises/{enterprise}/week_reports/{id}:
+  /v5/enterprises/:enterprise/week_reports/:id:
     get:
       tags:
         - Enterprises
@@ -11903,7 +11903,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/WeekReport"
-  /v5/enterprises/{enterprise}/week_report/{id}:
+  /v5/enterprises/:enterprise/week_report/:id:
     patch:
       tags:
         - Enterprises
@@ -11946,7 +11946,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/WeekReport"
-  /v5/enterprises/{enterprise}/week_report:
+  /v5/enterprises/:enterprise/week_report:
     post:
       tags:
         - Enterprises
@@ -11995,7 +11995,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/WeekReport"
-  /v5/enterprises/{enterprise}/issues/{number}:
+  /v5/enterprises/:enterprise/issues/:number:
     get:
       tags:
         - Issues
@@ -12097,7 +12097,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Issue"
-  /v5/enterprises/{enterprise}/issues/{number}/pull_requests:
+  /v5/enterprises/:enterprise/issues/:number/pull_requests:
     get:
       tags:
         - Issues
@@ -12131,7 +12131,7 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/PullRequest"
-  /v5/enterprises/{enterprise}/issues/{number}/comments:
+  /v5/enterprises/:enterprise/issues/:number/comments:
     get:
       tags:
         - Issues
@@ -12181,7 +12181,7 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/Note"
-  /v5/enterprises/{enterprise}/issues/{number}/labels:
+  /v5/enterprises/:enterprise/issues/:number/labels:
     get:
       tags:
         - Issues
@@ -12231,7 +12231,7 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/Label"
-  /v5/enterprises/{enterprise}/labels:
+  /v5/enterprises/:enterprise/labels:
     get:
       tags:
         - Labels
@@ -12259,7 +12259,7 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/Label"
-  /v5/enterprises/{enterprise}/labels/{name}:
+  /v5/enterprises/:enterprise/labels/:name:
     get:
       tags:
         - Labels
@@ -12291,7 +12291,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Label"
-  /v5/enterprises/{enterprise}/repos:
+  /v5/enterprises/:enterprise/repos:
     get:
       tags:
         - Repositories
@@ -12685,7 +12685,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Project"
-  /v5/enterprises/{enterprise}/members/{username}:
+  /v5/enterprises/:enterprise/members/:username:
     get:
       tags:
         - Enterprises
@@ -12830,7 +12830,7 @@ paths:
         "200":
           description: 列出可使用的 .gitignore 模板
           content: {}
-  /v5/gitignore/templates/{name}:
+  /v5/gitignore/templates/:name:
     get:
       tags:
         - Miscellaneous
@@ -13050,7 +13050,7 @@ paths:
         "200":
           description: 获取一个 .gitignore 模板
           content: {}
-  /v5/gitignore/templates/{name}/raw:
+  /v5/gitignore/templates/:name/raw:
     get:
       tags:
         - Miscellaneous
@@ -13287,7 +13287,7 @@ paths:
         "200":
           description: 列出可使用的开源许可协议
           content: {}
-  /v5/licenses/{license}:
+  /v5/licenses/:license:
     get:
       tags:
         - Miscellaneous
@@ -13359,7 +13359,7 @@ paths:
         "200":
           description: 获取一个开源许可协议
           content: {}
-  /v5/licenses/{license}/raw:
+  /v5/licenses/:license/raw:
     get:
       tags:
         - Miscellaneous
@@ -13457,7 +13457,7 @@ paths:
         "201":
           description: 渲染 Markdown 文本
           content: {}
-  /v5/enterprise/{enterprise}/pull_requests:
+  /v5/enterprise/:enterprise/pull_requests:
     get:
       tags:
         - Enterprises
@@ -13574,7 +13574,7 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/PullRequest"
-  /v5/networks/{owner}/{repo}/events:
+  /v5/networks/:owner/:repo/events:
     get:
       tags:
         - Activity
@@ -14156,7 +14156,7 @@ paths:
         "205":
           description: 执行成功
           content: {}
-  /v5/notifications/threads/{id}:
+  /v5/notifications/threads/:id:
     get:
       tags:
         - Activity
@@ -14330,7 +14330,7 @@ paths:
         "404":
           description: 没有相关数据
           content: {}
-  /v5/notifications/messages/{id}:
+  /v5/notifications/messages/:id:
     get:
       tags:
         - Activity
