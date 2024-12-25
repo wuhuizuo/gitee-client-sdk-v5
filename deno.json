@@ -1,0 +1,24 @@
+{
+  "name": "@gitee/client-sdk-v5",
+  "version": "5.4.85+b1",
+  "license": "MIT",
+  "exports": "./mod.ts",
+  "tasks": {
+    "generate": "deno run --allow-all scripts/download-oas.ts",
+    "lint": "deno lint",
+    "fmt": "deno fmt"
+  },
+  "publish": {
+    "include": [
+      "*.ts",
+      "README.md",
+      "LICENSE"
+    ],
+    "exclude": [
+      "*.spec.ts"
+    ]
+  },
+  "imports": {
+    "fets": "npm:fets@^0.8.4"
+  }
+}
